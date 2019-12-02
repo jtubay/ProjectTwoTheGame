@@ -1,3 +1,29 @@
-h1 {
+* {
     font-family: 'Press Start 2P', cursive;
+
 }
+
+#title{
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 80px;
+    padding: 10px;
+    align-content: center;
+    text-align: center;
+}
+
+#startup {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#startup2 {
+    width: 20%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
