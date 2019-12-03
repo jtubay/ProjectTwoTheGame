@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS kol-da-sackDB;
-CREATE DATABASE kol-da-sackDB;
