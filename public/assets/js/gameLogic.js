@@ -1,3 +1,5 @@
+$.ajax("/")
+
 function Enemy () {
     this.hp = 100,
     this.attack = function attack() {
