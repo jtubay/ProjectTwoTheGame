@@ -8,16 +8,21 @@
 <div id="startup" class="nes-container is-rounded">
 <p id="demo">Continue defending the Kol-da-sack!</p>
 </div>
+{{#if error}}
+<div class="error">
+  {{error}}
+</div>
+{{/if}}
 
 <form action="/login" method="POST">
 <div id="startup2" class="nes-field">
   <label for="name_field">Your email</label>
-  <input type="text" id="name_field" class="nes-input">
+  <input type="text" name="email" id="name_field" class="nes-input">
 </div>
 
 <div id="startup2" class="nes-field">
   <label for="name_field">Your password</label>
-  <input type="text" id="name_field" class="nes-input">
+  <input type="password" name="password" id="name_field" class="nes-input">
 </div>
 <div id="startup2">
  <input class="nes-btn" type="submit" value="Load File!">

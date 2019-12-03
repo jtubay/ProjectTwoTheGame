@@ -20,10 +20,13 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
     "morgan": "^1.9.1",
     "mysql2": "^2.0.1",
     "nes.css": "^2.2.1",
-    "sequelize": "^5.21.2"
+    "sequelize": "^5.21.2",
+    "session": "^0.1.0",
+    "sessions": "0.0.2-7"
   },
   "devDependencies": {
     "nodemon": "^2.0.1",
