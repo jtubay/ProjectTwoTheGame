@@ -1,7 +1,7 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const morgan = require("morgan");
-const session = require("express-session")
+const session = require("express-session");
 
 const db = require("./models/index");
 
@@ -17,11 +17,6 @@ app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(
-  session({
-    secret: "keyboard cat"
-  })
-);
 
 // Static assets
 app.use(express.static("public"));
@@ -41,14 +36,14 @@ app.use((req, res, next)=>{
         
         })
       }
-      req.user = user
+      req.user = user;
     })
     .catch(err => {
       console.log(err);
 
     })
     .finally(()=>{
-      next()
+      next();
     })
 })
 
