@@ -1,4 +1,6 @@
-$.ajax("/")
+
+
+$.ajax("/api/" + id)
 
 function Enemy () {
     this.hp = 100,
