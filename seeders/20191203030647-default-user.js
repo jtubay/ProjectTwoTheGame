@@ -16,14 +16,20 @@ module.exports = {
       "Users",
       [
         {
-          email: "jkh@email.com",
+          email: "sample@email.com",
           password: "Kool",
+          name: "Jean",
+          age: "17",
+          class: "Mage",
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           email: "other@email.com",
           password: "other",
+          name: "Bill",
+          age: "27",
+          class: "Mage",
           createdAt: new Date(),
           updatedAt: new Date()
         }

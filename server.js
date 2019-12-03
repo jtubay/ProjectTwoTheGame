@@ -21,6 +21,10 @@ app.use(morgan("dev"));
 // Static assets
 app.use(express.static("public"));
 
+app.use(session({
+  secret: "cat",
+}))
+
 //auth
 app.use((req, res, next)=>{
   if(!req.session.userId){
