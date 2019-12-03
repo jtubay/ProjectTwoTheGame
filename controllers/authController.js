@@ -22,7 +22,7 @@ router.post("/register", (req, res) => {
 
   }).then((user) => {
       console.log(user)
-    res.redirect("/list");
+    res.redirect("/login");
   })
   //res.render("auth/register");
 });

@@ -12,6 +12,9 @@
  
   <script src="http://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+
 <script src="/assets/js/general.js"></script>
 </head>
 
@@ -19,7 +22,7 @@
     <nav>
         <a href="/">Home</a> |
         {{#if user}}
-            {{user.email}} |
+            {{user.name}} |
             <a href="/logout">Retreat</a>
         {{else}}
         <a href="/login">Load File</a> | 
