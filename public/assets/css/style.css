@@ -1,6 +1,6 @@
 * {
     font-family: 'Press Start 2P', cursive;
-
+    
 }
 
 #title{
@@ -32,4 +32,6 @@
     
 }
 
-
+.p1{
+    display: none;
+}
