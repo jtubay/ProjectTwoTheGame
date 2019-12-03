@@ -22,6 +22,7 @@ app.use(express.static("public"));
 
 // Routes
 app.use(require("./controllers/staticController"));
+app.use(require("./controllers/authController"));
 
 // Synchronize my schema
 db.sequelize.sync({ force: process.env.NODE_ENV !== "production" })
