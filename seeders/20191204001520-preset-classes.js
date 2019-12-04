@@ -12,7 +12,7 @@ module.exports = {
         updatedAt: new Date() 
       },
       {
-        name: "Brawler",
+        name: "Fighter",
         health: 100,
         minDamage: 5,
         maxDamage: 20,
