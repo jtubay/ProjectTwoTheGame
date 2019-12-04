@@ -27,7 +27,7 @@ function changeText(cont1, cont2, speed) {
 }
 
 $(document).ready(function() {
-  changeText($(".p1"), $(".p2"), 60); //  150 = the Delay time in milliseconds between strokes.
+  changeText($(".p1"), $(".p2"), 50); //  150 = the Delay time in milliseconds between strokes.
 
   //clearInterval(Otimer);
   
