@@ -4,7 +4,7 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert("Classes", [
       {
-        name: "Wizard",
+        name: "Mage",
         health: 75,
         minDamage: 10,
         maxDamage: 25,
