@@ -57,3 +57,71 @@
     margin: 0 auto;
     padding: 20px;
 }
+
+/* styles for the gamescreen */
+#gameTitle {
+    text-align: center;
+    margin: 10px auto;
+}
+
+.grid-container {
+    display: grid;
+    position: relative;
+    grid-column-gap: 10%;
+    grid-template-columns: auto auto;
+    background-color: blue;
+    padding: 10px;
+    margin: 20px;
+}
+
+.grid-item {
+    background-color: lightblue;
+    border: 3px solid black;
+    padding: 30px;
+    width: 500px;
+    text-align: center;
+}
+
+#userBtns {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+#enemy {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    top: 10px;
+}
+
+img {
+    padding: 10px;
+    height: 250px;
+    width: 200px;
+}
+
+@media only screen and (max-width: 1070px) {
+    .grid-item {
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .grid-container {
+        grid-template-columns: auto;
+    }
+
+    .grid-item {
+        width: 100%;
+    }
+
+    #enemyPic {
+        display: none;
+    }
+
+    #enemy {
+        position: static;
+    }
+}
