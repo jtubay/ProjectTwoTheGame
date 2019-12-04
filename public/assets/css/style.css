@@ -102,6 +102,18 @@ img {
     width: 200px;
 }
 
+.commentaryTitle {
+    text-align: center;
+    text-decoration: underline;
+    margin: 0;
+}
+
+#commentary {
+    height: 150px;
+    margin: 0;
+    overflow: scroll;
+}
+
 @media only screen and (max-width: 1070px) {
     .grid-item {
         width: 350px;
