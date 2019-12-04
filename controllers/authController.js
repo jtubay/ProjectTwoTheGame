@@ -58,4 +58,15 @@ router.get("/logout", (req, res) => {
   });
 });
 
+router.get("/api/currentUser", (req, res) => {
+  res.json(req.user)
+})
+
+router.get("/api/class/:class", (req, res) => {
+  const klass = req.params.class;
+    db.Class.findOne({ where: {name: klass} }).then (data => {
+      res.json(data)
+    })
+})
+
 module.exports = router;
