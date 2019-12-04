@@ -51,6 +51,9 @@
     }
   }
 
-starting:hover{
-    cursor: arrow;
+#startupFour{
+    width: 20%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
 }
