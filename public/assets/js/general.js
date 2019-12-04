@@ -1,4 +1,9 @@
-const startMenu = $("#startupFour");
+
+
+
+/*window.onload = () =>{
+  document.getElementById("my_audio").play()
+}*/
 
 function changeText(cont1, cont2, speed) {
   var Otext = cont1.text();
@@ -12,6 +17,9 @@ function changeText(cont1, cont2, speed) {
       cont2.append(Ocontent[i]);
 
       i = i + 1;
+    } else{
+      $('#menu').removeClass('starting')
+      
     }
   }
 
@@ -19,7 +27,8 @@ function changeText(cont1, cont2, speed) {
 }
 
 $(document).ready(function() {
-  changeText($(".p1"), $(".p2"), 75); //  150 = the Delay time in milliseconds between strokes.
+  changeText($(".p1"), $(".p2"), 60); //  150 = the Delay time in milliseconds between strokes.
 
-  clearInterval(Otimer);
+  //clearInterval(Otimer);
+  
 });

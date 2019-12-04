@@ -6,6 +6,10 @@
     
 }
 
+nav{
+    padding-left: 50px;
+}
+
 
 #title{
     margin: 0 auto;
@@ -51,7 +55,7 @@
     }
   }
 
-#startupFour{
+.startupFour{
     width: 20%;
     text-align: center;
     margin: 0 auto;
@@ -136,4 +140,8 @@ img {
     #enemy {
         position: static;
     }
+}
+
+.starting {
+    display: none;
 }
