@@ -1,4 +1,13 @@
-
+    <nav>
+        <a href="/">Home</a> |
+        {{#if user}}
+            {{user.name}} |
+            <a href="/logout">Retreat</a>
+        {{else}}
+        <a href="/login">Load File</a> | 
+        <a href="/register">Create File</a>
+        {{/if}}
+    </nav>
 <div id="title">
 <h1>Kol-da-sack Kombat:</h1>
 <h2>Episode I</h2>

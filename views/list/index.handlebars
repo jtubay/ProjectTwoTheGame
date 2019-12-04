@@ -1,3 +1,14 @@
+<nav>
+  {{#if user}}
+  {{user.name}} |
+  <a href="/logout">Retreat</a>
+  {{else}}
+  <a href="/login">Load File</a> |
+  <a href="/register">Create File</a>
+  {{/if}}
+</nav>
+
+
 <h1 id="gameTitle">Kol-da-sack Kombat</h1>
   
     <div class="grid-container">
