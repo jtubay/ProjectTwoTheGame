@@ -13,6 +13,10 @@ $.get("/api/currentUser", data => {
     });
 });
 
+const getRndInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min)) + min;
+};
+
 function Enemy() {
     this.name = "Enemy",
         this.health = 100,
@@ -25,21 +29,18 @@ function Enemy() {
             if (checkHit >= 75) {
                 console.log("attack succesful");
                 tookDamage(dmgVal, currentPlayer);
-                // dmgPlayer(dmgVal);
+                // dmgPlayer(dmgVal)
             } else {
                 console.log("you're a failure");
             }
         };
-}
+    }
 
 const generateEnemy = () => {
     const newEnemy = new Enemy();
     return newEnemy;
 };
 
-const getRndInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min)) + min;
-};
 const baseAttack = (min, max) => {
     let dmgVal = getRndInt(min, max);
     console.log(min);
