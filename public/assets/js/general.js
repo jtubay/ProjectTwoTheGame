@@ -1,11 +1,11 @@
 const startMenu = $("#startupFour");
 
 function changeText(cont1, cont2, speed) {
-  var Otext = cont1.text();
+  let Otext = cont1.text();
 
-  var Ocontent = Otext.split("");
+  let Ocontent = Otext.split("");
 
-  var i = 0;
+  let i = 0;
 
   function show() {
     if (i < Ocontent.length) {
@@ -15,11 +15,10 @@ function changeText(cont1, cont2, speed) {
     }
   }
 
-  var Otimer = setInterval(show, speed);
+  let Otimer = setInterval(show, speed);
 }
 
 $(document).ready(function() {
   changeText($(".p1"), $(".p2"), 75); //  150 = the Delay time in milliseconds between strokes.
 
-  clearInterval(Otimer);
 });
