@@ -4,15 +4,21 @@ let maxDamage;
 let healthFactor;
 let username;
 let enemyHp = 100;
+let percentHp;
+let uses = 3;
 
 $.get("/api/currentUser", data => {
-    let username = data.name;
+    username = data.name;
     $.get(`/api/class/${data.class}`, currentPlayer => {
         console.log(currentPlayer);
         userHp = currentPlayer.health;
+        percentHp = currentPlayer.health;
+        console.log(userHp)
         minDamage = currentPlayer.minDamage;
         maxDamage = currentPlayer.maxDamage;
         healthFactor = 100 / userHp;
+        $(".playerHp").attr("max", userHp)
+        $(".playerHp").attr("value", userHp)
     });
 });
 
@@ -22,21 +28,7 @@ const getRndInt = (min, max) => {
 
 function Enemy() {
     this.name = "Enemy",
-        this.health = 100,
-        this.attack = function attack() {
-            let dmgVal = getRndInt(5, 15);
-
-            let checkHit = getRndInt(1, 100);
-            console.log(checkHit);
-
-            if (checkHit >= 75) {
-                console.log("attack succesful");
-                tookDamage(dmgVal, currentPlayer);
-                // dmgPlayer(dmgVal)
-            } else {
-                console.log("you're a failure");
-            }
-        };
+    this.health = 100
     }
 
 const generateEnemy = () => {
@@ -46,8 +38,6 @@ const generateEnemy = () => {
 
 const baseAttack = (min, max) => {
     let dmgVal = getRndInt(min, max);
-    console.log(min);
-    console.log(max);
     damageEnemy(dmgVal, enemy);
 
     enemyTurn();
@@ -58,20 +48,29 @@ const heavyAttack = (min, max) => {
 
     let checkHit = getRndInt(1, 100);
 
-    if (checkHit >= 75) {
-        damageEnemy(dmgVal, "Enemy");
+    if (checkHit >= 50) {
+        damageEnemy(dmgVal, enemy);
     } else {
-        console.log("you're a failure");
+        $('#commentary').prepend(`<div>${username} swings wildly but Grandma Gertrude was too fast!</div>`);
     }
     enemyTurn();
 };
 
-const potion = (min, max) => {
-    let healVal = getRndInt(min, max);
+const potion = (min, max) => {    
+    if (uses > 0) {
+        let healVal = getRndInt(min, max);
+        console.log(userHp + "before")
+        userHp += healVal;
+        percentHp += healVal;
+        console.log(userHp + "healed")
 
-    userHp += healVal;
-
-    enemyTurn();
+        $('.playerHp').attr("value", percentHp)
+        $('#commentary').prepend(`<div>${username} drinks a potion and heals for ${healVal} HP! ${uses - 1} potions remaining!</div>`);
+        enemyTurn();
+    } else {
+        $('#commentary').prepend(`<div>${username} reaches for their health potion but realizes they are out! Try something else!`)
+    }
+    uses-= 1;
 };
 
 const damageEnemy = (damageDealt, target) => {
@@ -85,25 +84,33 @@ const damageEnemy = (damageDealt, target) => {
     }
 };
 
-const damagePlayer = (damageDealt, target) => {
+const damagePlayer = (damageDealt) => {
     userHp -= damageDealt;
     $('#commentary').prepend(`<div>${username} took ${damageDealt} damage! Ouchies</div>`);
+    percentHp -= damageDealt;
+    $(".playerHp").attr("value", percentHp);
+
     if (userHp <= 0) {
         $('#commentary').prepend(`<div>${username} took ${damageDealt} damage and has fallen. This is so sad, Alexa play Despacito II</div>`);
     }
 };
 
 const enemyTurn = () => {
-    let dmgVal = getRndInt(0, 20);
-
-    // damagePlayer(dmgVal, currentPlayer);
+    let dmgVal = getRndInt(0, 25);
+    damagePlayer(dmgVal)
 };
 
 const attackBtn = () => {
     baseAttack(minDamage, maxDamage);
-    console.log(minDamage, "min");
-    console.log(maxDamage, "max");
 };
+
+const specialBtn = () => {
+    heavyAttack(minDamage, maxDamage)
+}
+
+const potionBtn = () => {
+    potion(15, 30)
+}
 
 const enemy = generateEnemy();
 
