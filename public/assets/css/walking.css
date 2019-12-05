@@ -1,0 +1,46 @@
+#runner {
+    margin-top: 100px;
+    transform: translate(-50%, -50%);
+    width: calc(920px / 8);
+    height: 137px;
+    background: url("/assets/image/sprite.png");
+    animation: animate 1s steps(8) infinite,
+        forward 5s linear infinite;
+
+
+}
+
+body{
+    filter: blur(0.5px) grayscale(90%);
+}
+
+/*
+@keyframes animate
+{
+    from
+    {
+        background-position: 0;
+    }
+    to
+    {
+        background-position: 920px;
+    }
+}*/
+
+@keyframes animate {
+    0%{
+        background-position: 0px;
+    }
+    100%{
+        background-position: 920px;
+    }
+}
+
+@keyframes forward {
+    0%{
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(1200px);
+    }
+}

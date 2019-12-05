@@ -1,9 +1,10 @@
 * {
   font-family: "Press Start 2P", cursive;
-  filter: blur(0.5px) grayscale(90%);
+  
   /*-webkit-filter: sepia(1);
     filter: sepia(1);*/
 }
+
 
 nav {
   padding-left: 50px;
