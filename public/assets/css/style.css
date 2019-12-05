@@ -6,6 +6,10 @@
     
 }
 
+nav{
+    padding-left: 50px;
+}
+
 
 #title{
     margin: 0 auto;
@@ -51,7 +55,7 @@
     }
   }
 
-#startupFour{
+.startupFour{
     width: 20%;
     text-align: center;
     margin: 0 auto;
@@ -102,6 +106,18 @@ img {
     width: 200px;
 }
 
+.commentaryTitle {
+    text-align: center;
+    text-decoration: underline;
+    margin: 0;
+}
+
+#commentary {
+    height: 150px;
+    margin: 0;
+    overflow: scroll;
+}
+
 @media only screen and (max-width: 1070px) {
     .grid-item {
         width: 350px;
@@ -124,4 +140,8 @@ img {
     #enemy {
         position: static;
     }
+}
+
+.starting {
+    display: none;
 }

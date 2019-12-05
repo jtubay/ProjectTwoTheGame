@@ -1,3 +1,14 @@
+<nav>
+  {{#if user}}
+  {{user.name}} |
+  <a href="/logout">Retreat</a>
+  {{else}}
+  <a href="/login">Load File</a> |
+  <a href="/register">Create File</a>
+  {{/if}}
+</nav>
+
+
 <h1 id="gameTitle">Kol-da-sack Kombat</h1>
   
     <div class="grid-container">
@@ -13,15 +24,16 @@
             </div>
         </div>
         <div id="enemy" class="grid-item">
-            <img src="/assets/image/monster.jpg" alt="monster" id="enemyPic">
-            <h3>Enemy Name</h3>
+            <img src="/assets/image/grandma.png" alt="monster" id="enemyPic">
+            <h3>Grandma Gertrude</h3>
             <progress class="nes-progress is-success" value="100" max="100"></progress>
             <div>Maybe do a 3rd party api call here?</div>
         </div>
     </div>
 
-    <div class="nes-container with-title is-dark is-centered">
-        <p class="title">Battle Commentary</p>
+    <p class="commentaryTitle">Battle Commentary</p>
+
+    <div class="nes-container is-dark is-centered" id="commentary">
         <div>The Battle Has Commenced!!!</div>
     </div>
 
