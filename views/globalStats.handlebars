@@ -1,0 +1,16 @@
+<nav>
+  {{#if user}}
+  {{user.name}} |
+  <a href="/logout">Retreat</a>
+  {{else}}
+  <a href="/login">Load File</a> |
+  <a href="/register">Create File</a>
+  {{/if}}
+</nav>
+
+<div class="nes-container with-title is-centered">
+  <p class="title">Kol-da-sack Kombat</p>
+  <p>Total Turns: </p>
+  <p>User Victories: </p>
+  <p>Grandma Victories: </p>
+</div>
