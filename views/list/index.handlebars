@@ -15,7 +15,7 @@
         <div id="userInfo" class="grid-item">
             <img id="userImg" src="/assets/image/{{user.class}}.png" alt="{{user.class}}">
             <h3>{{user.name}}</h3>
-            <progress class="nes-progress is-success" value="100" max="100"></progress>
+            <progress class="nes-progress is-success playerHp" value="100" max="100"></progress>
             <div id="userBtns">
                 <button id="attack" type="button" class="nes-btn is-success topBtn" onclick="attackBtn()">Attack</button>
                 <button type="button" class="nes-btn is-error topBtn">Special</button>
@@ -26,7 +26,7 @@
         <div id="enemy" class="grid-item">
             <img id="enemyPic" src="/assets/image/grandma.png" alt="monster" >
             <h3>Grandma Gertrude</h3>
-            <progress class="nes-progress is-success" value="100" max="100"></progress>
+            <progress class="nes-progress is-success enemyHp" value="100" max="100"></progress>
             <div>Maybe do a 3rd party api call here?</div>
         </div>
     </div>
