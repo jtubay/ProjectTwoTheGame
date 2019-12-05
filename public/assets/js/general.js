@@ -27,8 +27,10 @@ $(document).ready(function() {
   //clearInterval(Otimer);
   $("#attack").click(function(){
     console.log("clicked")
-    const soundPlay = new Audio("/assets/music/theme.mp3")
-    soundPlay.play()
+    const soundPlay = new Audio("/assets/music/battle.mp3")
+    if(!soundPlay.play()){
+      soundPlay.play()
+    }
     $("#enemyPic").attr("src", "/assets/image/dragon.jpg")
   })
   
