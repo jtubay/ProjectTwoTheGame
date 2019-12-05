@@ -2,8 +2,11 @@ let userHp;
 let minDamage;
 let maxDamage;
 let healthFactor;
+let username;
+let enemyHp = 100;
 
 $.get("/api/currentUser", data => {
+    let username = data.name;
     $.get(`/api/class/${data.class}`, currentPlayer => {
         console.log(currentPlayer);
         userHp = currentPlayer.health;
@@ -12,6 +15,10 @@ $.get("/api/currentUser", data => {
         healthFactor = 100 / userHp;
     });
 });
+
+const getRndInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min)) + min;
+};
 
 function Enemy() {
     this.name = "Enemy",
@@ -25,28 +32,24 @@ function Enemy() {
             if (checkHit >= 75) {
                 console.log("attack succesful");
                 tookDamage(dmgVal, currentPlayer);
-                // dmgPlayer(dmgVal);
+                // dmgPlayer(dmgVal)
             } else {
                 console.log("you're a failure");
             }
         };
-}
+    }
 
 const generateEnemy = () => {
     const newEnemy = new Enemy();
     return newEnemy;
 };
 
-const getRndInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min)) + min;
-};
 const baseAttack = (min, max) => {
     let dmgVal = getRndInt(min, max);
     console.log(min);
     console.log(max);
     damageEnemy(dmgVal, enemy);
 
-    $('.title').prepend(`<div>Grandma took ${dmgVal} damage! O  o  F!</div>`);
     enemyTurn();
 };
 
@@ -56,7 +59,7 @@ const heavyAttack = (min, max) => {
     let checkHit = getRndInt(1, 100);
 
     if (checkHit >= 75) {
-        tookDamage(dmgVal, enemy);
+        damageEnemy(dmgVal, "Enemy");
     } else {
         console.log("you're a failure");
     }
@@ -73,20 +76,27 @@ const potion = (min, max) => {
 
 const damageEnemy = (damageDealt, target) => {
     target.health -= damageDealt;
-    console.log(`${target.name} took ${damageDealt} damage!`);
-    if (target.hp <= 0) {
-        console.log(`${target.name} has died!`);
+    $('#commentary').prepend(`<div>Grandma took ${damageDealt} damage! O  o  F!</div>`);
+    enemyHp -= damageDealt;
+    $(".enemyHp").attr("value", enemyHp);
+
+    if (target.health <= 0) {
+        $('#commentary').prepend(`<div>Grandma took ${damageDealt} damage and has fallen. This is so great, Alexa play What's up pussycat</div>`);
     }
 };
 
 const damagePlayer = (damageDealt, target) => {
-
+    userHp -= damageDealt;
+    $('#commentary').prepend(`<div>${username} took ${damageDealt} damage! Ouchies</div>`);
+    if (userHp <= 0) {
+        $('#commentary').prepend(`<div>${username} took ${damageDealt} damage and has fallen. This is so sad, Alexa play Despacito II</div>`);
+    }
 };
 
 const enemyTurn = () => {
     let dmgVal = getRndInt(0, 20);
 
-    damagePlayer(dmgVal, currentPlayer);
+    // damagePlayer(dmgVal, currentPlayer);
 };
 
 const attackBtn = () => {
@@ -94,5 +104,7 @@ const attackBtn = () => {
     console.log(minDamage, "min");
     console.log(maxDamage, "max");
 };
+
+const enemy = generateEnemy();
 
 // Code Test
