@@ -1,5 +1,5 @@
 #runner {
-    margin-top: 100px;
+    margin-top: 90px;
     transform: translate(-50%, -50%);
     width: calc(920px / 8);
     height: 137px;
@@ -10,9 +10,6 @@
 
 }
 
-body{
-    filter: blur(0.5px) grayscale(90%);
-}
 
 /*
 @keyframes animate
@@ -41,6 +38,6 @@ body{
         transform: translateX(-100px);
     }
     100%{
-        transform: translateX(1200px);
+        transform: translateX(100vw);
     }
 }

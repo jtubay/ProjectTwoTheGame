@@ -58,7 +58,7 @@ app.use(require("./controllers/listController"));
 app.use(require("./controllers/statsController"));
 
 // Synchronize my schema
-// db.sequelize.sync({ force: process.env.NODE_ENV !== "production" })
+ //db.sequelize.sync({ force: process.env.NODE_ENV !== "production" })
 db.sequelize.sync()
 .then(() => {
   app.listen(PORT, () => {

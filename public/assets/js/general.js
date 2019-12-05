@@ -25,8 +25,6 @@ function changeText(cont1, cont2, speed) {
 
 $(document).ready(function() {
   changeText($(".p1"), $(".p2"), 50); //  150 = the Delay time in milliseconds between strokes.
-
-
   $("#attack").click(function() {
     console.log("clicked");
     const soundPlay = new Audio("/assets/music/laser.mp3");
