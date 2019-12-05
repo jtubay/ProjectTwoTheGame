@@ -107,6 +107,7 @@ const damagePlayer = (damageDealt) => {
     
         if (userHp <= 0) {
             $('#commentary').prepend(`<div>${username} took ${damageDealt} damage and has fallen. This is so sad, Alexa play Despacito II</div>`);
+            
         }
     }
     dodgeVal = false;

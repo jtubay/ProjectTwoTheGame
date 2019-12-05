@@ -4,6 +4,9 @@ filter: blur(0.5px) grayscale(90%);
 
 }
 
+body{
+    filter: blur(0.5px) grayscale(90%);
+}
 
 nav {
   padding-left: 50px;
