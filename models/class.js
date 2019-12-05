@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     maxDamage: DataTypes.INTEGER
   }, {});
   Class.associate = function(models) {
-    // associations can be defined here
+    Class.belongsTo(models.User);
   };
   return Class;
 };
