@@ -20,11 +20,11 @@ function changeText(cont1, cont2, speed) {
   let Otimer = setInterval(show, speed);
 }
 
+
+
+
 $(document).ready(function() {
   changeText($(".p1"), $(".p2"), 50); //  150 = the Delay time in milliseconds between strokes.
-
-  
-
 
 
   $("#attack").click(function() {
@@ -36,6 +36,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $("#enemy").removeClass("shake");
    }, 600)
+  
   });
 
   $("#battle").click(function() {
