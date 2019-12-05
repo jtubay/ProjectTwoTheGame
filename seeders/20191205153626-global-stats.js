@@ -6,8 +6,8 @@ module.exports = {
       totalTurns: 0,
       totalWins: 0,
       totalLoses: 0,
-      createdAt: new Date (),
-      updatedAt: new Date ()
+      createdAt: new Date(),
+      updatedAt: new Date()
     }], {});
   },
 
