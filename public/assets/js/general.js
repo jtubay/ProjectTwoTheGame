@@ -31,7 +31,7 @@ $(document).ready(function() {
     console.log("clicked");
     const soundPlay = new Audio("/assets/music/laser.mp3");
     soundPlay.play();
-    $("#enemyPic").attr("src", "/assets/image/dragon.jpg");
+    $("#enemyPic").attr("src", "/assets/image/dragon.png");
     $("#enemy").addClass("shake");
     setTimeout(function() {
       $("#enemy").removeClass("shake");
