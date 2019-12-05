@@ -23,7 +23,7 @@ app.use(express.static("public"));
 
 app.use(session({
   secret: "cat",
-}))
+}));
 
 //auth
 app.use((req, res, next)=>{
@@ -34,11 +34,11 @@ app.use((req, res, next)=>{
   db.User.findByPk(req.session.userId)
     .then(user => {
       if(!user) {
-        console.log("Cannot find user in session, destroying....")
+        console.log("Cannot find user in session, destroying....");
         return req.session.destroy(err => {
          if(err) throw err;
         
-        })
+        });
       }
       req.user = user;
     })
@@ -48,8 +48,8 @@ app.use((req, res, next)=>{
     })
     .finally(()=>{
       next();
-    })
-})
+    });
+});
 
 // Routes
 app.use(require("./controllers/staticController"));
