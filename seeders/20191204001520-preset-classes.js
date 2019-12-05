@@ -5,7 +5,7 @@ module.exports = {
     return queryInterface.bulkInsert("classes", [
       {
         name: "Mage",
-        health: 75,
+        health: 50,
         minDamage: 10,
         maxDamage: 25,
         createdAt: new Date(),
@@ -13,7 +13,7 @@ module.exports = {
       },
       {
         name: "Fighter",
-        health: 100,
+        health: 75,
         minDamage: 5,
         maxDamage: 20,
         createdAt: new Date(),
