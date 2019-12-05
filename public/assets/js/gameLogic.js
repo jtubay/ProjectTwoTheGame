@@ -5,13 +5,13 @@ let healthFactor;
 
 $.get("/api/currentUser", data => {
     $.get(`/api/class/${data.class}`, currentPlayer => {
-        console.log(currentPlayer)
+        console.log(currentPlayer);
         userHp = currentPlayer.health;
         minDamage = currentPlayer.minDamage;
         maxDamage = currentPlayer.maxDamage;
-        healthFactor = 100 / userHp
-    })
-})
+        healthFactor = 100 / userHp;
+    });
+});
 
 function Enemy() {
     this.name = "Enemy",
@@ -24,31 +24,31 @@ function Enemy() {
 
             if (checkHit >= 75) {
                 console.log("attack succesful");
-                tookDamage(dmgVal, currentPlayer)
+                tookDamage(dmgVal, currentPlayer);
                 // dmgPlayer(dmgVal);
             } else {
                 console.log("you're a failure");
             }
-        }
+        };
 }
 
 const generateEnemy = () => {
     const newEnemy = new Enemy();
     return newEnemy;
-}
+};
 
 const getRndInt = (min, max) => {
     return Math.floor(Math.random() * (max - min)) + min;
-}
+};
 const baseAttack = (min, max) => {
     let dmgVal = getRndInt(min, max);
-    console.log(min)
-    console.log(max)
+    console.log(min);
+    console.log(max);
     damageEnemy(dmgVal, enemy);
 
-    $('.title').prepend(`<div>Grandma took ${dmgVal} damage! O  o  F!</div>`)
+    $('.title').prepend(`<div>Grandma took ${dmgVal} damage! O  o  F!</div>`);
     enemyTurn();
-}
+};
 
 const heavyAttack = (min, max) => {
     let dmgVal = getRndInt(min*2, max*2);
@@ -61,7 +61,7 @@ const heavyAttack = (min, max) => {
         console.log("you're a failure");
     }
     enemyTurn();
-}
+};
 
 const potion = (min, max) => {
     let healVal = getRndInt(min, max);
@@ -69,30 +69,30 @@ const potion = (min, max) => {
     userHp += healVal;
 
     enemyTurn();
-}
+};
 
 const damageEnemy = (damageDealt, target) => {
     target.health -= damageDealt;
-    console.log(`${target.name} took ${damageDealt} damage!`)
+    console.log(`${target.name} took ${damageDealt} damage!`);
     if (target.hp <= 0) {
-        console.log(`${target.name} has died!`)
+        console.log(`${target.name} has died!`);
     }
-}
+};
 
 const damagePlayer = (damageDealt, target) => {
 
-}
+};
 
 const enemyTurn = () => {
-    let dmgVal = getRndInt(0, 20)
+    let dmgVal = getRndInt(0, 20);
 
-    damagePlayer(dmgVal, currentPlayer)
-}
+    damagePlayer(dmgVal, currentPlayer);
+};
 
 const attackBtn = () => {
-    baseAttack(minDamage, maxDamage)
-    console.log(minDamage, "min")
-    console.log(maxDamage, "max")
-}
+    baseAttack(minDamage, maxDamage);
+    console.log(minDamage, "min");
+    console.log(maxDamage, "max");
+};
 
 // Code Test
