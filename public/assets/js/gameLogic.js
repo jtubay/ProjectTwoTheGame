@@ -6,6 +6,7 @@ let username;
 let enemyHp = 100;
 let percentHp;
 let uses = 3;
+let dodgeVal = false;
 
 $.get("/api/currentUser", data => {
     username = data.name;
@@ -38,6 +39,7 @@ const generateEnemy = () => {
 
 const baseAttack = (min, max) => {
     let dmgVal = getRndInt(min, max);
+    console.log(dmgVal)
     damageEnemy(dmgVal, enemy);
 
     enemyTurn();
@@ -73,6 +75,10 @@ const potion = (min, max) => {
     uses-= 1;
 };
 
+const dodge = () => {
+    dodgeVal = true;
+}
+
 const damageEnemy = (damageDealt, target) => {
     target.health -= damageDealt;
     $('#commentary').prepend(`<div>Grandma took ${damageDealt} damage! O  o  F!</div>`);
@@ -85,15 +91,22 @@ const damageEnemy = (damageDealt, target) => {
 };
 
 const damagePlayer = (damageDealt) => {
-    userHp -= damageDealt;
-    $('#commentary').prepend(`<div>${username} took ${damageDealt} damage! Ouchies</div>`);
-    percentHp -= damageDealt;
-    $(".playerHp").attr("value", percentHp);
-
-    if (userHp <= 0) {
-        $('#commentary').prepend(`<div>${username} took ${damageDealt} damage and has fallen. This is so sad, Alexa play Despacito II</div>`);
+    if (dodgeVal){
+        $('#commentary').prepend(`<div>${username} rolls out of the way of Grandma Gertrude's attack, and avoids damage!</div>`);
+    } else {
+        userHp -= damageDealt;
+        $('#commentary').prepend(`<div>${username} took ${damageDealt} damage! Ouchies</div>`);
+        percentHp -= damageDealt;
+        $(".playerHp").attr("value", percentHp);
+    
+        if (userHp <= 0) {
+            $('#commentary').prepend(`<div>${username} took ${damageDealt} damage and has fallen. This is so sad, Alexa play Despacito II</div>`);
+        }
     }
+    dodgeVal = false;
 };
+
+
 
 const enemyTurn = () => {
     let dmgVal = getRndInt(0, 25);
@@ -110,6 +123,10 @@ const specialBtn = () => {
 
 const potionBtn = () => {
     potion(15, 30)
+}
+
+const dodgeBtn = () => {
+    dodge();
 }
 
 const enemy = generateEnemy();
