@@ -1,9 +1,4 @@
-
-
-
-/*window.onload = () =>{
-  document.getElementById("my_audio").play()
-}*/
+console.log("hello")
 
 function changeText(cont1, cont2, speed) {
   let Otext = cont1.text();
@@ -27,8 +22,14 @@ function changeText(cont1, cont2, speed) {
 }
 
 $(document).ready(function() {
-  changeText($(".p1"), $(".p2"), 60); //  150 = the Delay time in milliseconds between strokes.
+  changeText($(".p1"), $(".p2"), 50); //  150 = the Delay time in milliseconds between strokes.
 
   //clearInterval(Otimer);
+  $("#attack").click(function(){
+    console.log("clicked")
+    const soundPlay = new Audio("/assets/music/theme.mp3")
+    soundPlay.play()
+    $("#enemyPic").attr("src", "/assets/image/dragon.jpg")
+  })
   
 });
