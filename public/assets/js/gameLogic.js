@@ -6,10 +6,10 @@ let healthFactor;
 $.get("/api/currentUser", data => {
     $.get(`/api/class/${data.class}`, currentPlayer => {
         console.log(currentPlayer)
-        let userHp = currentPlayer.health;
-        let minDamage = currentPlayer.minDamage;
-        let maxDamage = currentPlayer.maxDamage;
-        let healthFactor = 100 / userHp
+        userHp = currentPlayer.health;
+        minDamage = currentPlayer.minDamage;
+        maxDamage = currentPlayer.maxDamage;
+        healthFactor = 100 / userHp
     })
 })
 
@@ -96,11 +96,3 @@ const attackBtn = () => {
 }
 
 // Code Test
-const enemy = generateEnemy()
-console.log(enemy)
-tookDamage(20, enemy)
-console.log(enemy)
-tookDamage(20, enemy)
-tookDamage(15, currentPlayer)
-
-enemy.attack();
