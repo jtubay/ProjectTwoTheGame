@@ -1,180 +1,196 @@
 * {
-    font-family: 'Press Start 2P', cursive;
-    filter: blur(.5px) grayscale(90%);
-    /*-webkit-filter: sepia(1);
+  font-family: "Press Start 2P", cursive;
+  filter: blur(0.5px) grayscale(90%);
+  /*-webkit-filter: sepia(1);
     filter: sepia(1);*/
-    
 }
 
-nav{
-    padding-left: 50px;
+nav {
+  padding-left: 50px;
 }
 
-
-#title{
-    margin: 0 auto;
-    width: 50%;
-    margin-top: 80px;
-    padding: 10px;
-    align-content: center;
-    text-align: center;
-}
-
-#battle{
-    margin: 0 auto;
-    align-self: center;
-}
-
-#startup {
-    width: 50%;
-    text-align: center;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-#startup2 {
-    width: 20%;
-    text-align: center;
-    margin: 0 auto;
-    padding: 20px;
+#title {
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 80px;
+  padding: 10px;
+  align-content: center;
+  text-align: center;
 }
 
 #battle {
-    width: 20%;
-    text-align: center;
-    margin: 0 auto;
+  margin: 0 auto;
+  align-self: center;
 }
 
-#setupCon{
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 20px;
-    
+#startup {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
 }
 
-.p1{
-    display: none;
+#startup2 {
+  width: 20%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
 }
 
+#battle {
+  width: 20%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#setupCon {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.p1 {
+  display: none;
+}
 
 .blink_me {
-    animation: blinker 1s linear infinite;
-  }
-  
-  @keyframes blinker {
-    50% {
-      opacity: 0;
-    }
-  }
+  animation: blinker 1s linear infinite;
+}
 
-.startupFour{
-    width: 20%;
-    text-align: center;
-    margin: 0 auto;
-    padding: 20px;
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.startupFour {
+  width: 20%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* styles for the gamescreen */
 #gameTitle {
-    text-align: center;
-    margin: 10px auto;
+  text-align: center;
+  margin: 10px auto;
 }
 
 .grid-container {
-    display: grid;
-    position: relative;
-    grid-column-gap: 10%;
-    grid-template-columns: auto auto;
-    background-color: blue;
-    padding: 10px;
-    margin: 20px;
+  display: grid;
+  position: relative;
+  grid-column-gap: 10%;
+  grid-template-columns: auto auto;
+  background-color: blue;
+  padding: 10px;
+  margin: 20px;
 }
 
 .grid-item {
-    background-color: lightblue;
-    border: 3px solid black;
-    padding: 30px;
-    width: 500px;
-    text-align: center;
+  background-color: lightblue;
+  border: 3px solid black;
+  padding: 30px;
+  width: 500px;
+  text-align: center;
 }
 
 #userBtns {
-    display: inline-grid;
-    grid-template-columns: auto auto;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 }
 
 #enemy {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    top: 10px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  top: 10px;
 }
 
 img {
-    padding: 10px;
-    height: 250px;
-    width: 200px;
+  padding: 10px;
+  height: 250px;
+  width: 200px;
 }
 
 .commentaryTitle {
-    text-align: center;
-    text-decoration: underline;
-    margin: 0;
+  text-align: center;
+  text-decoration: underline;
+  margin: 0;
 }
 
 #commentary {
-    height: 150px;
-    margin: 0;
-    overflow: scroll;
+  height: 150px;
+  margin: 0;
+  overflow: scroll;
 }
 
 @media only screen and (max-width: 1070px) {
-    .grid-item {
-        width: 350px;
-    }
+  .grid-item {
+    width: 350px;
+  }
 }
 
 @media only screen and (max-width: 770px) {
-    .grid-container {
-        grid-template-columns: auto;
-    }
+  .grid-container {
+    grid-template-columns: auto;
+  }
 
-    .grid-item {
-        width: 100%;
-    }
+  .grid-item {
+    width: 100%;
+  }
 
-    #enemyPic {
-        display: none;
-    }
+  #enemyPic {
+    display: none;
+  }
 
-    #enemy {
-        position: static;
-    }
+  #enemy {
+    position: static;
+  }
 }
 
 .starting {
-    display: none;
+  display: none;
 }
-img:hover {
-    /* Start the shake animation and make the animation last for 0.5 seconds */
-    animation: shake 0.5s;
-  
-    /* When the animation is finished, start again */
-    
+
+.shake {
+  animation: shake 0.5s;
+  animation-iteration-count: initial;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
   }
-  
-  @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
   }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}

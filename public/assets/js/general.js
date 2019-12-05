@@ -1,4 +1,4 @@
-console.log("hello")
+console.log("hello");
 
 function changeText(cont1, cont2, speed) {
   let Otext = cont1.text();
@@ -12,9 +12,8 @@ function changeText(cont1, cont2, speed) {
       cont2.append(Ocontent[i]);
 
       i = i + 1;
-    } else{
-      $('#menu').removeClass('starting')
-      
+    } else {
+      $("#menu").removeClass("starting");
     }
   }
 
@@ -24,21 +23,24 @@ function changeText(cont1, cont2, speed) {
 $(document).ready(function() {
   changeText($(".p1"), $(".p2"), 50); //  150 = the Delay time in milliseconds between strokes.
 
-  //clearInterval(Otimer);
-  $("#attack").click(function(){
-    console.log("clicked")
-    const soundPlay = new Audio("/assets/music/laser.mp3")
   
-      soundPlay.play()
-    
-    $("#enemyPic").attr("src", "/assets/image/dragon.jpg")
-  })
-  $("#battle").click(function(){
-    console.log("clicked")
-    const soundPlay = new Audio("/assets/music/battle.mp3")
-  
-      soundPlay.play()
-    
-  })
-  
+
+
+
+  $("#attack").click(function() {
+    console.log("clicked");
+    const soundPlay = new Audio("/assets/music/laser.mp3");
+    soundPlay.play();
+    $("#enemyPic").attr("src", "/assets/image/dragon.jpg");
+    $("#enemy").addClass("shake");
+    setTimeout(function() {
+      $("#enemy").removeClass("shake");
+   }, 600)
+  });
+
+  $("#battle").click(function() {
+    console.log("clicked");
+    const soundPlay = new Audio("/assets/music/battle.mp3");
+    soundPlay.play();
+  });
 });
