@@ -63,7 +63,8 @@ router.get("/api/currentUser", (req, res) => {
 });
 
 router.get("/api/class/:class", (req, res) => {
-  const klass = req.params.class;
+  const klass = req.params.class
+  console.log(klass)
     db.Class.findOne({ where: {name: klass} }).then (data => {
       res.json(data);
     });
