@@ -1,7 +1,7 @@
-# ProjectTwoTheGame
+# Kol-da-sack Kombat!!!
 
 ## Link
-<a href="https://immense-hamlet-97451.herokuapp.com/" target="_blank">CLICK HERE to go to Game</a>
+<a href="https://immense-hamlet-97451.herokuapp.com/" target="_blank">CLICK HERE to go to Kol-da-sack Kombat!</a>
 
 #### Table of Contents
 1. [Synopsis](#Synopsis)
