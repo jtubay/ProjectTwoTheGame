@@ -34,9 +34,9 @@
 * [Heroku](https://dashboard.heroku.com/)
 
 ## Photos
-![Home Screen](/assets/image/homescreen.png)
-![Retro Game Screen](/assets/image/retrotheme.png)
-![Color Game Screen](/assets/image/colortheme.png)
+![Home Screen](/public/assets/image/homescreen.png)
+![Retro Game Screen](/public/assets/image/retrotheme.png)
+![Color Game Screen](/public/assets/image/colortheme.png)
 
 ## Difficulties
 
