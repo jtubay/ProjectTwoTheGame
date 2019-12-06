@@ -1,11 +1,14 @@
 * {
   font-family: "Press Start 2P", cursive;
-filter: blur(0.5px) grayscale(90%); 
-
 }
 
-body{
+:root {
     filter: blur(0.5px) grayscale(90%);
+}
+
+/* styling for the theme switch on gamescreen */
+[data-theme="color"] {
+  filter: none;
 }
 
 nav {
@@ -127,6 +130,69 @@ img {
   height: 150px;
   margin: 0;
   overflow: scroll;
+}
+
+/* styling with theme switch  */
+#colorSwitch {
+  margin-left: 45%;
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  margin-left: 10px;
+}
+
+.theme-switch {
+  display: inline-block;
+  position: relative;
+  height: 34px;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: silver;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.slider:before {
+  background-color: rgb(34, 211, 93);
+  bottom: 4px;
+  left: 4px;
+  content: "";
+  height: 26px;
+  width: 26px;
+  position: absolute;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: orchid;
+}
+
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 @media only screen and (max-width: 1070px) {
