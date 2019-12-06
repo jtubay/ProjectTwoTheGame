@@ -7,8 +7,18 @@
     animation: animate 1s steps(8) infinite,
         forward 5s linear infinite;
 
-
 }
+/*
+#dragon {
+    margin-top: 70px;
+    transform: translate(-50%, -50%);
+    width: calc(1293px / 8);
+    height: 139px;
+    background: url("/assets/image/dragonflyfly.jpg");
+    animation: animateTwo 2s steps(8) infinite,
+        forwardTwo 5s linear infinite;
+
+}*/
 
 
 /*
@@ -41,3 +51,23 @@
         transform: translateX(100vw);
     }
 }
+
+/*
+@keyframes animateTwo {
+    0%{
+        background-position: 0px;
+    }
+    100%{
+        background-position: 1293px;
+    }
+}
+
+@keyframes forwardTwo {
+    0%{
+        transform: translateX(-100px);
+    }
+    100%{
+        transform: translateX(100vw);
+    }
+}
+*/

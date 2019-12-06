@@ -9,7 +9,9 @@ router.get("/stats", (req, res) => {
 });
 
 router.post("/api/stats", (req, res) => {
-  
+  console.log(req.body);
+  db.Stats.create({
+  })
 })
 
 module.exports = router;
