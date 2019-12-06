@@ -21,10 +21,10 @@
 ## Rules
 
 ## Contributors
-* **Adam Lowe** - [GitHub](https://github.com/adam-lowe)
-* **Gabriel Mangum** - [GitHub](https://github.com/GabrielTMangum)
-* **Michael Trpak** - [GitHub](https://github.com/mrtrpak)
-* **Jean Tubay** - [GitHub](https://github.com/jtubay)
+* **Adam Lowe's** - [GitHub](https://github.com/adam-lowe)
+* **Gabriel Mangum's** - [GitHub](https://github.com/GabrielTMangum)
+* **Michael Trpak's** - [GitHub](https://github.com/mrtrpak)
+* **Jean Tubay's** - [GitHub](https://github.com/jtubay)
 
 ## Built With
 * [animate.css](https://daneden.github.io/animate.css/)
