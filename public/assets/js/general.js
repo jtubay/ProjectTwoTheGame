@@ -36,6 +36,25 @@ $(document).ready(function() {
    }, 600)
   
   });
+  $("#potion").click(function() {
+    const soundPlay = new Audio("/assets/music/drink.mp3");
+    soundPlay.play();
+  });
+
+  $("#specialAttk").click(function() {
+    const soundPlay = new Audio("/assets/music/laser.mp3");
+    soundPlay.play();
+    $("#enemyPic").attr("src", "/assets/image/dragon.png");
+    $("#enemy").addClass("shake");
+    setTimeout(function() {
+      $("#enemy").removeClass("shake");
+   }, 600)
+  });
+
+  $("#dodge").click(function() {
+    const soundPlay = new Audio("/assets/music/laser.mp3");
+    soundPlay.play();
+  });
 
   $("#battle").click(function() {
     console.log("clicked");
