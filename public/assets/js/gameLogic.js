@@ -7,6 +7,7 @@ let enemyHp = 100;
 let percentHp;
 let uses = 3;
 let dodgeVal = false;
+let totatlTurns;
 
 $.get("/api/currentUser", data => {
     username = data.name;
@@ -42,6 +43,7 @@ const baseAttack = (min, max) => {
     console.log(dmgVal)
     damageEnemy(dmgVal, enemy);
 
+    totatlTurns++;
     enemyTurn();
 };
 
@@ -55,6 +57,7 @@ const heavyAttack = (min, max) => {
     } else {
         $('#commentary').prepend(`<div>${username} swings wildly but Grandma Gertrude was too fast!</div>`);
     }
+    totatlTurns++;
     enemyTurn();
 };
 
@@ -68,6 +71,7 @@ const potion = (min, max) => {
 
         $('.playerHp').attr("value", percentHp)
         $('#commentary').prepend(`<div>${username} drinks a potion and heals for ${healVal} HP! ${uses - 1} potions remaining!</div>`);
+        totatlTurns++;
         enemyTurn();
     } else {
         $('#commentary').prepend(`<div>${username} reaches for their health potion but realizes they are out! Try something else!`)
@@ -77,6 +81,8 @@ const potion = (min, max) => {
 
 const dodge = () => {
     dodgeVal = true;
+    totatlTurns++
+    enemyTurn();
 }
 
 const damageEnemy = (damageDealt, target) => {
@@ -111,6 +117,7 @@ const damagePlayer = (damageDealt) => {
 
 const enemyTurn = () => {
     let dmgVal = getRndInt(0, 25);
+    totatlTurns++;
     damagePlayer(dmgVal)
 };
 

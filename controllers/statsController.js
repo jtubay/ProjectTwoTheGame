@@ -8,4 +8,8 @@ router.get("/stats", (req, res) => {
   res.render("list/globalStats", { user: req.user });
 });
 
+router.post("/api/stats", (req, res) => {
+  
+})
+
 module.exports = router;
