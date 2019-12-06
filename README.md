@@ -1,7 +1,7 @@
 # ProjectTwoTheGame
 
 ## Link
-[Click Here To go to Game](https://immense-hamlet-97451.herokuapp.com/)
+<a href="https://immense-hamlet-97451.herokuapp.com/" target="_blank">Click Here To go to Game</a>
 
 #### Table of Contents
 1. [Synopsis](#Synopsis)
