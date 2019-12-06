@@ -56,6 +56,7 @@ app.use(require("./controllers/staticController"));
 app.use(require("./controllers/authController"));
 app.use(require("./controllers/listController"));
 app.use(require("./controllers/statsController"));
+app.use(require("./controllers/aboutUsController"));
 
 // Synchronize my schema
  //db.sequelize.sync({ force: process.env.NODE_ENV !== "production" })
