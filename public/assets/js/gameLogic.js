@@ -92,6 +92,7 @@ const damageEnemy = (damageDealt, target) => {
     $(".enemyHp").attr("value", enemyHp);
 
     if (target.health <= 0) {
+        $('.highscores').append(`<p>${username} - ${userHp}</p>`)
         $('#commentary').prepend(`<div>Grandma took ${damageDealt} damage and has fallen. This is so great, Alexa play What's up pussycat</div>`);
     }
 };
@@ -106,8 +107,8 @@ const damagePlayer = (damageDealt) => {
         $(".playerHp").attr("value", percentHp);
     
         if (userHp <= 0) {
-            $('#commentary').prepend(`<div>${username} took ${damageDealt} damage and has fallen. This is so sad, Alexa play Despacito II</div>`);
             
+            $('#commentary').prepend(`<div>${username} took ${damageDealt} damage and has fallen. This is so sad, Alexa play Despacito II</div>`);
         }
     }
     dodgeVal = false;
