@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/jtubay/ProjectTwoTheGame#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.0",
     "morgan": "^1.9.1",
